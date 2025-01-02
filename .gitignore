@@ -1,0 +1,11 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+
+tests/example.spec.js
+tests-examples/
+config/
+trace-viewer/
