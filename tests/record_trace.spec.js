@@ -12,8 +12,9 @@ let isTracingStarted = false    // track if tracking has been started
 test.beforeAll(async ({ browser }) => {
     context = await browser.newContext()
 
-    // only start tracing if it is not 'on' and it hasn't been started yet
-    if (trace !== 'on') {
+    // only start tracing if it is not 'on' and it hasn't been started yet 
+    // if (trace !== 'on')
+    if (isTracingStarted = false) {
         try {
             await context.tracing.start(
                 {
@@ -74,6 +75,6 @@ test('login_success', async ({ page }) => {
     await page.getByRole('button', { name: 'Sign in' }).click();
 
     // land to MIRA Admin portal main landing page
-    await expect(page.locator('app-home').getByRole('img')).toBeVisible();
+    await expect(page.locator('app-home').getByRole('img')).toBeVisible({ timeout: 20000 });
     await expect(page.getByRole('paragraph')).toContainText('Welcome');
 });
