@@ -4,6 +4,8 @@ import { trace } from '../playwright.config'
 import { mira_admin, username, password } from '../config/credential'
 
 
+/* Un-comment this section WHEN trace is not set to 'on' in the playwright.config.js
+
 // set-up the tracing for all the tests in this file
 let context
 let page
@@ -13,8 +15,7 @@ test.beforeAll(async ({ browser }) => {
     context = await browser.newContext()
 
     // only start tracing if it is not 'on' and it hasn't been started yet 
-    // if (trace !== 'on')
-    if (isTracingStarted = false) {
+    if (trace !== 'on') {
         try {
             await context.tracing.start(
                 {
@@ -47,7 +48,7 @@ test.afterAll(async () => {
     }
 
 })
-
+*/
 
 test('login_success', async ({ page }) => {
     // land to MIRA Admin portal login page
