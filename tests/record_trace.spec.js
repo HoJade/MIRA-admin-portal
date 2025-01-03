@@ -77,4 +77,5 @@ test('login_success', async ({ page }) => {
     // land to MIRA Admin portal main landing page
     await expect(page.locator('app-home').getByRole('img')).toBeVisible({ timeout: 20000 });
     await expect(page.getByRole('paragraph')).toContainText('Welcome');
+    await expect(page).toHaveScreenshot()
 });
